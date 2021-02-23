@@ -1,14 +1,22 @@
 import Head from 'next/head';
+import { CompletedChallenges } from '../components/CompletedChallenges';
 import { ExperienceBar } from '../components/ExperienceBar'
+import { Profile } from '../components/Profile';
+import styles from '../styles/pages/Home.module.css';
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-      <link rel="preconnect" href="https://fonts.gstatic.com"/>
-      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300;1,700&family=Press+Start+2P&display=swap" rel="stylesheet"/> 
-      </Head>
-      <ExperienceBar />
+    <div className={styles.container}>
+      <ExperienceBar/>
+
+      <section>
+        <div>
+          <Profile/>
+
+          <CompletedChallenges/>
+        </div>
+        <div></div>
+      </section>
     </div>
     
   )
