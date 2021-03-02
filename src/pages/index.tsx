@@ -1,8 +1,11 @@
 import Head from 'next/head';
+import React from 'react';
+import { ChallengeBox } from '../components/ChallengeBox';
 import { CompletedChallenges } from '../components/CompletedChallenges';
 import { Countdowm } from '../components/Countdown';
 import { ExperienceBar } from '../components/ExperienceBar'
 import { Profile } from '../components/Profile';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 
 
@@ -16,17 +19,20 @@ export default function Home() {
       </Head>
 
       <ExperienceBar/>
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile/>
 
-      <section>
-        <div>
-          <Profile/>
-
-          <CompletedChallenges/>
-          <Countdowm/>
-        </div>
-        <div></div>
-      </section>
-    </div>
+            <CompletedChallenges/>
+            <Countdowm/>
+          </div>
+          <div>
+            <ChallengeBox/>
+          </div>
+        </section>
+      </CountdownProvider>
+      </div>
     
   )
 }
